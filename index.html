@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Video</title>
+<style>
+body{
+    margin:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+#playBtn{
+    font-size:50px;
+    padding:20px 40px;
+    cursor:pointer;
+}
+
+video{
+    display:none;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+}
+</style>
+</head>
+<body>
+
+<button id="playBtn">▶ PLAY</button>
+
+<video id="video" loop>
+    <source src="51814.mp4" type="video/mp4">
+</video>
+
+<script>
+const btn = document.getElementById("playBtn");
+const video = document.getElementById("video");
+
+btn.onclick = async () => {
+    btn.style.display = "none";
+    video.style.display = "block";
+    await video.play();
+};
+</script>
+
+</body>
+</html>
